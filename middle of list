@@ -1,0 +1,16 @@
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int len = 1;
+        auto copy = head;
+        while (copy != nullptr){
+            len++;
+            copy = copy->next;
+        }
+        int range = (len - 1) / 2;
+        for (int i = 0; i < range; i++){
+            head = head->next;
+        } 
+        return head;
+    }
+};
